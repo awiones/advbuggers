@@ -1,7 +1,7 @@
 /*!
  * Debugger Demo v1
  * Copyright 2024 The Awiones 
- * Licensed under MIT (https://github.com/twbs/icons/blob/main/LICENSE)
+ * Licensed under GNU 3.0 (https://github.com/awiones/advbuggers/blob/main/LICENSE)
  */
 
 (function () {
