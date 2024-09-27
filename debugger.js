@@ -77,7 +77,6 @@
     
     document.body.insertAdjacentHTML('beforeend', html);
 
-    // Inject CSS into the head
     const css = `
         body, html {
             margin: 0;
@@ -215,7 +214,7 @@
     style.appendChild(document.createTextNode(css));
     document.head.appendChild(style);
 
-    // JavaScript Logic for Debugger
+
     const debuggerToggle = document.getElementById('debugger-toggle');
     const debuggerContainer = document.getElementById('debugger');
     const closeBtn = document.getElementById('close-btn');
@@ -247,7 +246,6 @@
         });
     });
 
-    // Real-time Log Capture
     const originalLog = console.log;
     console.log = function(...args) {
         appendLog('Log', args.join(' '));
@@ -260,17 +258,16 @@
         originalError.apply(console, arguments);
     };
 
-    // Append logs to the debugger
     function appendLog(type, message, isError = false) {
         const logEntry = document.createElement('div');
         logEntry.classList.add('log-entry');
         logEntry.innerHTML = `<strong>${type}:</strong> ${message}`;
         if (isError) {
             logEntry.classList.add('error');
-            logEntry.appendChild(generateCodePreview());  // Add code preview on error
+            logEntry.appendChild(generateCodePreview());  
         }
         logsList.appendChild(logEntry);
-        logsList.scrollTop = logsList.scrollHeight;  // Auto scroll to bottom
+        logsList.scrollTop = logsList.scrollHeight;  
     }
 
     // Generate a fake code preview (you can extend this with more realistic code)
